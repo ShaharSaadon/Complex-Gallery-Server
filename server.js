@@ -39,7 +39,9 @@ const departureRoutes = require("./api/departure/departure.routes");
 app.use(express.json()); // handle with put requests
 app.use("/api/painting", paintingRoutes);
 app.use("/api/departure", departureRoutes);
-
+app.get("/", (req, res) => {
+    res.send("Welcome to my server!");
+});
 const port = process.env.PORT || 3030;
 http.listen(port, () => {
     console.log("Server is running on port: ", port);
